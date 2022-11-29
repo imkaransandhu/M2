@@ -1,38 +1,52 @@
+/* X-Small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap */
+
+html {
+  font-size: 11px;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 400px) {
+  html {
+    font-size: 12px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 640px) {
+  html {
+    font-size: 13px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 768) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1280) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1536px) {
+  html {
+    font-size: 20px;
   }
 }
