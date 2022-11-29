@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./Components/Header";
-import InputForm from "./Components/InputForm";
 
 import CarTypeApi from "./API/CarTypeApi";
 import CarGroup from "./Components/CarGroup/CarGroup";
 import UrlCarImage from "./Components/UrlCarImage";
+import FormGroup from "./Components/Forms/FormGroup";
 
 function App() {
   const [carFilterType, setCarFilterType] = useState("");
@@ -18,6 +18,10 @@ function App() {
     setURL(e.target.value);
   }
 
+  function handleFileURL(fileUrl) {
+    setURL(fileUrl);
+  }
+
   function handleShowUrlImage() {
     setShowUrlImage(true);
   }
@@ -26,6 +30,7 @@ function App() {
     e.preventDefault();
     handleLoader();
     setShowUrlImage(false);
+
     CarTypeApi(URL, handleCarFilterType, handleShowUrlImage);
   }
 
@@ -41,12 +46,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <InputForm
+      <FormGroup
         handleLoader={handleLoader}
         handleCarFilterType={handleCarFilterType}
         handleURL={handleURL}
         handleSubmit={handleSubmit}
+        handleShowUrlImage={handleShowUrlImage}
+        handleFileURL={handleFileURL}
       />
+
       {showUrlImage && <UrlCarImage carSrc={URL} />}
       <CarGroup loader={loader} carFilterType={carFilterType} />
     </div>
