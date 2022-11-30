@@ -21,7 +21,7 @@ const ImageToUrlAPI = (
       handleFileURL(res.data.image.url);
       CarTypeApi(res.data.image.url, handleCarFilterType, handleShowUrlImage);
     })
-    .catch((error) => console.log("error", error));
+    .catch((error) => console.log("error"));
 };
 
 export default ImageToUrlAPI;

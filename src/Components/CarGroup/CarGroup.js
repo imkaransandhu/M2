@@ -12,15 +12,11 @@ const CarGroup = ({ loader, carFilterType }) => {
           })
         ) : (
           CarArray.map((car, index) => {
-            if (car.type === carFilterType) {
-              return <Car key={index} car={car} />;
-            } else {
-              return "";
-            }
+            return car.type === carFilterType && <Car key={index} car={car} />;
           })
         )
       ) : (
-        <p>We are doing clever things please wait.</p>
+        <p>We are doing clever things please wait ...</p>
       )}
     </div>
   );
